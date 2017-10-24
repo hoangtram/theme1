@@ -8,19 +8,19 @@ and open the template in the editor.
 <page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <update handle="default_head_blocks"/>
     <body>
-        <referenceContainer name="main">
-            <container htmlTag="div" htmlClass="container" name="container-content">
-                <container htmlTag="div" htmlClass="row" name="row-content">
-                    <container name="content" as="content" htmlClass="col-sm-9" htmlTag="div" htmlId="content">
-                        <block class="Magento\Theme\Block\Html\Title" name="page.main.title" template="html/title.phtml" before="-"/>
-                    </container>
+        <referenceContainer name="main.content" >
+            <container name="home-slider-main" htmlTag="div" htmlClass="slider container" before="-">
+                <container htmlTag="div" htmlClass="row">
+                    <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::slider.phtml"/>
                 </container>
             </container>
-
-            <container name="content.top" label="Main Content Top"/>
-            <container name="content.aside" label="Main Content Aside"/>
-            <container name="content.bottom" label="Main Content Bottom"/>
-
+            <container htmlTag="div" htmlClass="new_products container" after="home-slider-main">
+                <container htmlTag="div" htmlClass="row" htmlId="all">
+                    <container htmlTag="div" htmlId="content">
+                        <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::new_products.phtml"/>
+                    </container>
+                 </container>
+            </container>
         </referenceContainer>
         
         <referenceBlock name="report.bugs" remove="true" />
