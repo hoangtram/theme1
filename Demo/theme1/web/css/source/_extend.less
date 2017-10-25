@@ -12,7 +12,6 @@ and open the template in the editor.
     border: 0;
     margin-bottom: 0;
     background: #3d465a;
-    color: #ffffff;
 }
 
 .page-header{
@@ -25,11 +24,27 @@ and open the template in the editor.
     background: #3d465a;
 } 
 
-a:visited, .alink:visited,
-.navigation .level0 > .level-top ,
-a, .alink {
+a:visited, .alink:visited, .navigation .level0 > .level-top, a, .alink {
+    color: #5bd77b;
+}
+
+a:hover, a:focus {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navigation .level0.active > .level-top, .navigation .level0.has-active > .level-top {
     color: #ffffff;
 }
+
+.navigation .level0 > .level-top:hover, .navigation .level0 > .level-top.ui-state-focus {
+    color: #ffffff;
+    text-decoration: none;
+}
+/*a:visited, .alink:visited, .navigation .level0 > .level-top, a:hover, .alink:hover {
+    color: #ffffff;
+    text-decoration: none;
+}*/
 
 .block-search .control{
     background: #ffffff;
@@ -37,6 +52,13 @@ a, .alink {
 
 
 //===============NEW PRODUCT =======================
+#content {
+    margin-top: 25px;
+}
+/*h3 {
+    border-bottom: 2px solid #f66d1f;
+}*/
+
 .col-item
 {
     border: 1px solid #E1E1E1;

@@ -8,13 +8,13 @@ and open the template in the editor.
 <page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <update handle="default_head_blocks"/>
     <body>
-        <referenceContainer name="main.content" >
-            <container name="home-slider-main" htmlTag="div" htmlClass="slider container" before="-">
+        <referenceContainer name="main" >
+            <container name="home-slider-main" htmlTag="div" htmlClass="slider container" >
                 <container htmlTag="div" htmlClass="row">
                     <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::slider.phtml"/>
                 </container>
             </container>
-            <container htmlTag="div" htmlClass="new_products container" after="home-slider-main">
+            <container name="home-new-products" htmlTag="div" htmlClass="new_products container" after="home-slider-main">
                 <container htmlTag="div" htmlClass="row" htmlId="all">
                     <container htmlTag="div" htmlId="content">
                         <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::new_products.phtml"/>
@@ -22,6 +22,7 @@ and open the template in the editor.
                  </container>
             </container>
         </referenceContainer>
+        
         
         <referenceBlock name="report.bugs" remove="true" />
         
